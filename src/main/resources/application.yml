@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /
+  port: 80
+
+spring:
+  rabbitmq:
+    host: 192.168.202.128
+    username: admin
+    password: admin
+    #手动确认ack，rpc模式会有问题，测试RPC模式时，将下面配置删除即可
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
+
+logging:
+  level:
+    com.jiang: debug
